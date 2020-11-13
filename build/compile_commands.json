@@ -1,0 +1,8 @@
+[
+  {
+    "directory": "/Users/matthewjohnston/okra/kalman-soc/build",
+    "command": "c++ -Idemo@exe -I. -I.. -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'demo@exe/main.cpp.o' -MF 'demo@exe/main.cpp.o.d' -o 'demo@exe/main.cpp.o' -c ../main.cpp",
+    "file": "../main.cpp",
+    "output": "demo@exe/main.cpp.o"
+  }
+]
