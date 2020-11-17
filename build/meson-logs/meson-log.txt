@@ -1,14 +1,14 @@
-Build started at 2020-11-13T11:28:27.641477
+Build started at 2020-11-17T11:24:48.186066
 Main binary: /usr/local/opt/python@3.8/bin/python3.8
 Build Options: -Dbackend=ninja
 Python system: Darwin
 The Meson build system
 Version: 0.52.1
-Source dir: /Users/matthewjohnston/okra/kalman-soc
-Build dir: /Users/matthewjohnston/okra/kalman-soc/build
+Source dir: /Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc
+Build dir: /Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build
 Build type: native build
-Project name: tutorial
-Project version: undefined
+Project name: Kalman SoC
+Project version: 0.0.1
 C++ compiler for the build machine: c++ (clang 11.0.3 "Apple clang version 11.0.3 (clang-1103.0.32.29)")
 C++ linker for the build machine: APPLE ld 556.5
 C++ compiler for the host machine: c++ (clang 11.0.3 "Apple clang version 11.0.3 (clang-1103.0.32.29)")
@@ -19,11 +19,45 @@ Host machine cpu family: x86_64
 Host machine cpu: x86_64
 Target machine cpu family: x86_64
 Target machine cpu: x86_64
-Build targets in project: 1
+Program python3 found: YES (/Users/matthewjohnston/anaconda3/envs/okra-soc/bin/python3)
+Program clang-format found: YES (/usr/local/bin/clang-format)
+
+Executing subproject cpputest method meson 
+
+Project name: CppUTest
+Project version: 3.8
+C++ compiler for the build machine: c++ (clang 11.0.3 "Apple clang version 11.0.3 (clang-1103.0.32.29)")
+C++ linker for the build machine: APPLE ld 556.5
+C++ compiler for the host machine: c++ (clang 11.0.3 "Apple clang version 11.0.3 (clang-1103.0.32.29)")
+C++ linker for the host machine: APPLE ld 556.5
+Build targets in project: 2
+Subproject cpputest finished.
+
+Adding test "cpputest"
+Message: 
+
+Build commands:
+    ninja           compile
+    ninja clean     clean
+    ninja lint      prints a diff for files that do not match the style guide
+
+Build targets in project: 4
 Found ninja-1.10.1 at /usr/local/bin/ninja
 Running compile:
-Working directory:  /Users/matthewjohnston/okra/kalman-soc/build/meson-private/tmp8zqpdrrw
-Command line:  c++ /Users/matthewjohnston/okra/kalman-soc/build/meson-private/tmp8zqpdrrw/testfile.cpp -o /Users/matthewjohnston/okra/kalman-soc/build/meson-private/tmp8zqpdrrw/output.obj -pipe -c -O0 -fpermissive --print-search-dirs 
+Working directory:  /Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build/meson-private/tmpatczoj9h
+Command line:  c++ /Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build/meson-private/tmpatczoj9h/testfile.cpp -o /Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build/meson-private/tmpatczoj9h/output.obj -pipe -c -O0 -fpermissive --print-search-dirs 
+
+Code:
+ 
+Compiler stdout:
+ programs: =/Library/Developer/CommandLineTools/usr/bin
+libraries: =/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3
+
+Compiler stderr:
+ 
+Running compile:
+Working directory:  /Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build/meson-private/tmpc944ep8u
+Command line:  c++ /Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build/meson-private/tmpc944ep8u/testfile.cpp -o /Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build/meson-private/tmpc944ep8u/output.obj -pipe -c -O0 -fpermissive --print-search-dirs 
 
 Code:
  

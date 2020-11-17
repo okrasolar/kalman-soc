@@ -1,1 +1,1 @@
-[]
+[{"cmd": ["/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build/run_tests"], "env": {}, "name": "cpputest", "workdir": null, "timeout": 30, "suite": ["Kalman_SoC"], "is_parallel": true, "priority": 0}]

@@ -1,8 +1,230 @@
 [
   {
-    "directory": "/Users/matthewjohnston/okra/kalman-soc/build",
-    "command": "c++ -Idemo@exe -I. -I.. -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'demo@exe/main.cpp.o' -MF 'demo@exe/main.cpp.o.d' -o 'demo@exe/main.cpp.o' -c ../main.cpp",
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -IKalman@sta -I. -I.. -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'Kalman@sta/src_SoCKalman.cpp.o' -MF 'Kalman@sta/src_SoCKalman.cpp.o.d' -o 'Kalman@sta/src_SoCKalman.cpp.o' -c ../src/SoCKalman.cpp",
+    "file": "../src/SoCKalman.cpp",
+    "output": "Kalman@sta/src_SoCKalman.cpp.o"
+  },
+  {
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -Ibacktest@exe -I. -I.. -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'backtest@exe/main.cpp.o' -MF 'backtest@exe/main.cpp.o.d' -o 'backtest@exe/main.cpp.o' -c ../main.cpp",
     "file": "../main.cpp",
-    "output": "demo@exe/main.cpp.o"
+    "output": "backtest@exe/main.cpp.o"
+  },
+  {
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -Irun_tests@exe -I. -I.. -I../tests/modules -I../tests/../src -I../dep/cpputest/include -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'run_tests@exe/tests_modules_SoCKalmanTest.cpp.o' -MF 'run_tests@exe/tests_modules_SoCKalmanTest.cpp.o.d' -o 'run_tests@exe/tests_modules_SoCKalmanTest.cpp.o' -c ../tests/modules/SoCKalmanTest.cpp",
+    "file": "../tests/modules/SoCKalmanTest.cpp",
+    "output": "run_tests@exe/tests_modules_SoCKalmanTest.cpp.o"
+  },
+  {
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -Irun_tests@exe -I. -I.. -I../tests/modules -I../tests/../src -I../dep/cpputest/include -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'run_tests@exe/src_SoCKalman.cpp.o' -MF 'run_tests@exe/src_SoCKalman.cpp.o.d' -o 'run_tests@exe/src_SoCKalman.cpp.o' -c ../src/SoCKalman.cpp",
+    "file": "../src/SoCKalman.cpp",
+    "output": "run_tests@exe/src_SoCKalman.cpp.o"
+  },
+  {
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -Irun_tests@exe -I. -I.. -I../tests/modules -I../tests/../src -I../dep/cpputest/include -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'run_tests@exe/tests_main.cpp.o' -MF 'run_tests@exe/tests_main.cpp.o.d' -o 'run_tests@exe/tests_main.cpp.o' -c ../tests/main.cpp",
+    "file": "../tests/main.cpp",
+    "output": "run_tests@exe/tests_main.cpp.o"
+  },
+  {
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -Irun_tests@exe -I. -I.. -I../tests/modules -I../tests/../src -I../dep/cpputest/include -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'run_tests@exe/dep_cpputest_src_CppUTest_CommandLineArguments.cpp.o' -MF 'run_tests@exe/dep_cpputest_src_CppUTest_CommandLineArguments.cpp.o.d' -o 'run_tests@exe/dep_cpputest_src_CppUTest_CommandLineArguments.cpp.o' -c ../dep/cpputest/src/CppUTest/CommandLineArguments.cpp",
+    "file": "../dep/cpputest/src/CppUTest/CommandLineArguments.cpp",
+    "output": "run_tests@exe/dep_cpputest_src_CppUTest_CommandLineArguments.cpp.o"
+  },
+  {
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -Irun_tests@exe -I. -I.. -I../tests/modules -I../tests/../src -I../dep/cpputest/include -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'run_tests@exe/dep_cpputest_src_CppUTest_CommandLineTestRunner.cpp.o' -MF 'run_tests@exe/dep_cpputest_src_CppUTest_CommandLineTestRunner.cpp.o.d' -o 'run_tests@exe/dep_cpputest_src_CppUTest_CommandLineTestRunner.cpp.o' -c ../dep/cpputest/src/CppUTest/CommandLineTestRunner.cpp",
+    "file": "../dep/cpputest/src/CppUTest/CommandLineTestRunner.cpp",
+    "output": "run_tests@exe/dep_cpputest_src_CppUTest_CommandLineTestRunner.cpp.o"
+  },
+  {
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -Irun_tests@exe -I. -I.. -I../tests/modules -I../tests/../src -I../dep/cpputest/include -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'run_tests@exe/dep_cpputest_src_CppUTest_JUnitTestOutput.cpp.o' -MF 'run_tests@exe/dep_cpputest_src_CppUTest_JUnitTestOutput.cpp.o.d' -o 'run_tests@exe/dep_cpputest_src_CppUTest_JUnitTestOutput.cpp.o' -c ../dep/cpputest/src/CppUTest/JUnitTestOutput.cpp",
+    "file": "../dep/cpputest/src/CppUTest/JUnitTestOutput.cpp",
+    "output": "run_tests@exe/dep_cpputest_src_CppUTest_JUnitTestOutput.cpp.o"
+  },
+  {
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -Irun_tests@exe -I. -I.. -I../tests/modules -I../tests/../src -I../dep/cpputest/include -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'run_tests@exe/dep_cpputest_src_CppUTest_MemoryLeakDetector.cpp.o' -MF 'run_tests@exe/dep_cpputest_src_CppUTest_MemoryLeakDetector.cpp.o.d' -o 'run_tests@exe/dep_cpputest_src_CppUTest_MemoryLeakDetector.cpp.o' -c ../dep/cpputest/src/CppUTest/MemoryLeakDetector.cpp",
+    "file": "../dep/cpputest/src/CppUTest/MemoryLeakDetector.cpp",
+    "output": "run_tests@exe/dep_cpputest_src_CppUTest_MemoryLeakDetector.cpp.o"
+  },
+  {
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -Irun_tests@exe -I. -I.. -I../tests/modules -I../tests/../src -I../dep/cpputest/include -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'run_tests@exe/dep_cpputest_src_CppUTest_MemoryLeakWarningPlugin.cpp.o' -MF 'run_tests@exe/dep_cpputest_src_CppUTest_MemoryLeakWarningPlugin.cpp.o.d' -o 'run_tests@exe/dep_cpputest_src_CppUTest_MemoryLeakWarningPlugin.cpp.o' -c ../dep/cpputest/src/CppUTest/MemoryLeakWarningPlugin.cpp",
+    "file": "../dep/cpputest/src/CppUTest/MemoryLeakWarningPlugin.cpp",
+    "output": "run_tests@exe/dep_cpputest_src_CppUTest_MemoryLeakWarningPlugin.cpp.o"
+  },
+  {
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -Irun_tests@exe -I. -I.. -I../tests/modules -I../tests/../src -I../dep/cpputest/include -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'run_tests@exe/dep_cpputest_src_CppUTest_SimpleMutex.cpp.o' -MF 'run_tests@exe/dep_cpputest_src_CppUTest_SimpleMutex.cpp.o.d' -o 'run_tests@exe/dep_cpputest_src_CppUTest_SimpleMutex.cpp.o' -c ../dep/cpputest/src/CppUTest/SimpleMutex.cpp",
+    "file": "../dep/cpputest/src/CppUTest/SimpleMutex.cpp",
+    "output": "run_tests@exe/dep_cpputest_src_CppUTest_SimpleMutex.cpp.o"
+  },
+  {
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -Irun_tests@exe -I. -I.. -I../tests/modules -I../tests/../src -I../dep/cpputest/include -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'run_tests@exe/dep_cpputest_src_CppUTest_SimpleString.cpp.o' -MF 'run_tests@exe/dep_cpputest_src_CppUTest_SimpleString.cpp.o.d' -o 'run_tests@exe/dep_cpputest_src_CppUTest_SimpleString.cpp.o' -c ../dep/cpputest/src/CppUTest/SimpleString.cpp",
+    "file": "../dep/cpputest/src/CppUTest/SimpleString.cpp",
+    "output": "run_tests@exe/dep_cpputest_src_CppUTest_SimpleString.cpp.o"
+  },
+  {
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -Irun_tests@exe -I. -I.. -I../tests/modules -I../tests/../src -I../dep/cpputest/include -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'run_tests@exe/dep_cpputest_src_CppUTest_TeamCityTestOutput.cpp.o' -MF 'run_tests@exe/dep_cpputest_src_CppUTest_TeamCityTestOutput.cpp.o.d' -o 'run_tests@exe/dep_cpputest_src_CppUTest_TeamCityTestOutput.cpp.o' -c ../dep/cpputest/src/CppUTest/TeamCityTestOutput.cpp",
+    "file": "../dep/cpputest/src/CppUTest/TeamCityTestOutput.cpp",
+    "output": "run_tests@exe/dep_cpputest_src_CppUTest_TeamCityTestOutput.cpp.o"
+  },
+  {
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -Irun_tests@exe -I. -I.. -I../tests/modules -I../tests/../src -I../dep/cpputest/include -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'run_tests@exe/dep_cpputest_src_CppUTest_TestFailure.cpp.o' -MF 'run_tests@exe/dep_cpputest_src_CppUTest_TestFailure.cpp.o.d' -o 'run_tests@exe/dep_cpputest_src_CppUTest_TestFailure.cpp.o' -c ../dep/cpputest/src/CppUTest/TestFailure.cpp",
+    "file": "../dep/cpputest/src/CppUTest/TestFailure.cpp",
+    "output": "run_tests@exe/dep_cpputest_src_CppUTest_TestFailure.cpp.o"
+  },
+  {
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -Irun_tests@exe -I. -I.. -I../tests/modules -I../tests/../src -I../dep/cpputest/include -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'run_tests@exe/dep_cpputest_src_CppUTest_TestFilter.cpp.o' -MF 'run_tests@exe/dep_cpputest_src_CppUTest_TestFilter.cpp.o.d' -o 'run_tests@exe/dep_cpputest_src_CppUTest_TestFilter.cpp.o' -c ../dep/cpputest/src/CppUTest/TestFilter.cpp",
+    "file": "../dep/cpputest/src/CppUTest/TestFilter.cpp",
+    "output": "run_tests@exe/dep_cpputest_src_CppUTest_TestFilter.cpp.o"
+  },
+  {
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -Irun_tests@exe -I. -I.. -I../tests/modules -I../tests/../src -I../dep/cpputest/include -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'run_tests@exe/dep_cpputest_src_CppUTest_TestHarness_c.cpp.o' -MF 'run_tests@exe/dep_cpputest_src_CppUTest_TestHarness_c.cpp.o.d' -o 'run_tests@exe/dep_cpputest_src_CppUTest_TestHarness_c.cpp.o' -c ../dep/cpputest/src/CppUTest/TestHarness_c.cpp",
+    "file": "../dep/cpputest/src/CppUTest/TestHarness_c.cpp",
+    "output": "run_tests@exe/dep_cpputest_src_CppUTest_TestHarness_c.cpp.o"
+  },
+  {
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -Irun_tests@exe -I. -I.. -I../tests/modules -I../tests/../src -I../dep/cpputest/include -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'run_tests@exe/dep_cpputest_src_CppUTest_TestMemoryAllocator.cpp.o' -MF 'run_tests@exe/dep_cpputest_src_CppUTest_TestMemoryAllocator.cpp.o.d' -o 'run_tests@exe/dep_cpputest_src_CppUTest_TestMemoryAllocator.cpp.o' -c ../dep/cpputest/src/CppUTest/TestMemoryAllocator.cpp",
+    "file": "../dep/cpputest/src/CppUTest/TestMemoryAllocator.cpp",
+    "output": "run_tests@exe/dep_cpputest_src_CppUTest_TestMemoryAllocator.cpp.o"
+  },
+  {
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -Irun_tests@exe -I. -I.. -I../tests/modules -I../tests/../src -I../dep/cpputest/include -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'run_tests@exe/dep_cpputest_src_CppUTest_TestOutput.cpp.o' -MF 'run_tests@exe/dep_cpputest_src_CppUTest_TestOutput.cpp.o.d' -o 'run_tests@exe/dep_cpputest_src_CppUTest_TestOutput.cpp.o' -c ../dep/cpputest/src/CppUTest/TestOutput.cpp",
+    "file": "../dep/cpputest/src/CppUTest/TestOutput.cpp",
+    "output": "run_tests@exe/dep_cpputest_src_CppUTest_TestOutput.cpp.o"
+  },
+  {
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -Irun_tests@exe -I. -I.. -I../tests/modules -I../tests/../src -I../dep/cpputest/include -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'run_tests@exe/dep_cpputest_src_CppUTest_TestPlugin.cpp.o' -MF 'run_tests@exe/dep_cpputest_src_CppUTest_TestPlugin.cpp.o.d' -o 'run_tests@exe/dep_cpputest_src_CppUTest_TestPlugin.cpp.o' -c ../dep/cpputest/src/CppUTest/TestPlugin.cpp",
+    "file": "../dep/cpputest/src/CppUTest/TestPlugin.cpp",
+    "output": "run_tests@exe/dep_cpputest_src_CppUTest_TestPlugin.cpp.o"
+  },
+  {
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -Irun_tests@exe -I. -I.. -I../tests/modules -I../tests/../src -I../dep/cpputest/include -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'run_tests@exe/dep_cpputest_src_CppUTest_TestRegistry.cpp.o' -MF 'run_tests@exe/dep_cpputest_src_CppUTest_TestRegistry.cpp.o.d' -o 'run_tests@exe/dep_cpputest_src_CppUTest_TestRegistry.cpp.o' -c ../dep/cpputest/src/CppUTest/TestRegistry.cpp",
+    "file": "../dep/cpputest/src/CppUTest/TestRegistry.cpp",
+    "output": "run_tests@exe/dep_cpputest_src_CppUTest_TestRegistry.cpp.o"
+  },
+  {
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -Irun_tests@exe -I. -I.. -I../tests/modules -I../tests/../src -I../dep/cpputest/include -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'run_tests@exe/dep_cpputest_src_CppUTest_TestResult.cpp.o' -MF 'run_tests@exe/dep_cpputest_src_CppUTest_TestResult.cpp.o.d' -o 'run_tests@exe/dep_cpputest_src_CppUTest_TestResult.cpp.o' -c ../dep/cpputest/src/CppUTest/TestResult.cpp",
+    "file": "../dep/cpputest/src/CppUTest/TestResult.cpp",
+    "output": "run_tests@exe/dep_cpputest_src_CppUTest_TestResult.cpp.o"
+  },
+  {
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -Irun_tests@exe -I. -I.. -I../tests/modules -I../tests/../src -I../dep/cpputest/include -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'run_tests@exe/dep_cpputest_src_CppUTest_TestTestingFixture.cpp.o' -MF 'run_tests@exe/dep_cpputest_src_CppUTest_TestTestingFixture.cpp.o.d' -o 'run_tests@exe/dep_cpputest_src_CppUTest_TestTestingFixture.cpp.o' -c ../dep/cpputest/src/CppUTest/TestTestingFixture.cpp",
+    "file": "../dep/cpputest/src/CppUTest/TestTestingFixture.cpp",
+    "output": "run_tests@exe/dep_cpputest_src_CppUTest_TestTestingFixture.cpp.o"
+  },
+  {
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -Irun_tests@exe -I. -I.. -I../tests/modules -I../tests/../src -I../dep/cpputest/include -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'run_tests@exe/dep_cpputest_src_CppUTest_Utest.cpp.o' -MF 'run_tests@exe/dep_cpputest_src_CppUTest_Utest.cpp.o.d' -o 'run_tests@exe/dep_cpputest_src_CppUTest_Utest.cpp.o' -c ../dep/cpputest/src/CppUTest/Utest.cpp",
+    "file": "../dep/cpputest/src/CppUTest/Utest.cpp",
+    "output": "run_tests@exe/dep_cpputest_src_CppUTest_Utest.cpp.o"
+  },
+  {
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -Irun_tests@exe -I. -I.. -I../tests/modules -I../tests/../src -I../dep/cpputest/include -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'run_tests@exe/dep_cpputest_src_CppUTestExt_CodeMemoryReportFormatter.cpp.o' -MF 'run_tests@exe/dep_cpputest_src_CppUTestExt_CodeMemoryReportFormatter.cpp.o.d' -o 'run_tests@exe/dep_cpputest_src_CppUTestExt_CodeMemoryReportFormatter.cpp.o' -c ../dep/cpputest/src/CppUTestExt/CodeMemoryReportFormatter.cpp",
+    "file": "../dep/cpputest/src/CppUTestExt/CodeMemoryReportFormatter.cpp",
+    "output": "run_tests@exe/dep_cpputest_src_CppUTestExt_CodeMemoryReportFormatter.cpp.o"
+  },
+  {
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -Irun_tests@exe -I. -I.. -I../tests/modules -I../tests/../src -I../dep/cpputest/include -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'run_tests@exe/dep_cpputest_src_CppUTestExt_IEEE754ExceptionsPlugin.cpp.o' -MF 'run_tests@exe/dep_cpputest_src_CppUTestExt_IEEE754ExceptionsPlugin.cpp.o.d' -o 'run_tests@exe/dep_cpputest_src_CppUTestExt_IEEE754ExceptionsPlugin.cpp.o' -c ../dep/cpputest/src/CppUTestExt/IEEE754ExceptionsPlugin.cpp",
+    "file": "../dep/cpputest/src/CppUTestExt/IEEE754ExceptionsPlugin.cpp",
+    "output": "run_tests@exe/dep_cpputest_src_CppUTestExt_IEEE754ExceptionsPlugin.cpp.o"
+  },
+  {
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -Irun_tests@exe -I. -I.. -I../tests/modules -I../tests/../src -I../dep/cpputest/include -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'run_tests@exe/dep_cpputest_src_CppUTestExt_MemoryReportAllocator.cpp.o' -MF 'run_tests@exe/dep_cpputest_src_CppUTestExt_MemoryReportAllocator.cpp.o.d' -o 'run_tests@exe/dep_cpputest_src_CppUTestExt_MemoryReportAllocator.cpp.o' -c ../dep/cpputest/src/CppUTestExt/MemoryReportAllocator.cpp",
+    "file": "../dep/cpputest/src/CppUTestExt/MemoryReportAllocator.cpp",
+    "output": "run_tests@exe/dep_cpputest_src_CppUTestExt_MemoryReportAllocator.cpp.o"
+  },
+  {
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -Irun_tests@exe -I. -I.. -I../tests/modules -I../tests/../src -I../dep/cpputest/include -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'run_tests@exe/dep_cpputest_src_CppUTestExt_MemoryReporterPlugin.cpp.o' -MF 'run_tests@exe/dep_cpputest_src_CppUTestExt_MemoryReporterPlugin.cpp.o.d' -o 'run_tests@exe/dep_cpputest_src_CppUTestExt_MemoryReporterPlugin.cpp.o' -c ../dep/cpputest/src/CppUTestExt/MemoryReporterPlugin.cpp",
+    "file": "../dep/cpputest/src/CppUTestExt/MemoryReporterPlugin.cpp",
+    "output": "run_tests@exe/dep_cpputest_src_CppUTestExt_MemoryReporterPlugin.cpp.o"
+  },
+  {
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -Irun_tests@exe -I. -I.. -I../tests/modules -I../tests/../src -I../dep/cpputest/include -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'run_tests@exe/dep_cpputest_src_CppUTestExt_MemoryReportFormatter.cpp.o' -MF 'run_tests@exe/dep_cpputest_src_CppUTestExt_MemoryReportFormatter.cpp.o.d' -o 'run_tests@exe/dep_cpputest_src_CppUTestExt_MemoryReportFormatter.cpp.o' -c ../dep/cpputest/src/CppUTestExt/MemoryReportFormatter.cpp",
+    "file": "../dep/cpputest/src/CppUTestExt/MemoryReportFormatter.cpp",
+    "output": "run_tests@exe/dep_cpputest_src_CppUTestExt_MemoryReportFormatter.cpp.o"
+  },
+  {
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -Irun_tests@exe -I. -I.. -I../tests/modules -I../tests/../src -I../dep/cpputest/include -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'run_tests@exe/dep_cpputest_src_CppUTestExt_MockActualCall.cpp.o' -MF 'run_tests@exe/dep_cpputest_src_CppUTestExt_MockActualCall.cpp.o.d' -o 'run_tests@exe/dep_cpputest_src_CppUTestExt_MockActualCall.cpp.o' -c ../dep/cpputest/src/CppUTestExt/MockActualCall.cpp",
+    "file": "../dep/cpputest/src/CppUTestExt/MockActualCall.cpp",
+    "output": "run_tests@exe/dep_cpputest_src_CppUTestExt_MockActualCall.cpp.o"
+  },
+  {
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -Irun_tests@exe -I. -I.. -I../tests/modules -I../tests/../src -I../dep/cpputest/include -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'run_tests@exe/dep_cpputest_src_CppUTestExt_MockExpectedCall.cpp.o' -MF 'run_tests@exe/dep_cpputest_src_CppUTestExt_MockExpectedCall.cpp.o.d' -o 'run_tests@exe/dep_cpputest_src_CppUTestExt_MockExpectedCall.cpp.o' -c ../dep/cpputest/src/CppUTestExt/MockExpectedCall.cpp",
+    "file": "../dep/cpputest/src/CppUTestExt/MockExpectedCall.cpp",
+    "output": "run_tests@exe/dep_cpputest_src_CppUTestExt_MockExpectedCall.cpp.o"
+  },
+  {
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -Irun_tests@exe -I. -I.. -I../tests/modules -I../tests/../src -I../dep/cpputest/include -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'run_tests@exe/dep_cpputest_src_CppUTestExt_MockExpectedCallsList.cpp.o' -MF 'run_tests@exe/dep_cpputest_src_CppUTestExt_MockExpectedCallsList.cpp.o.d' -o 'run_tests@exe/dep_cpputest_src_CppUTestExt_MockExpectedCallsList.cpp.o' -c ../dep/cpputest/src/CppUTestExt/MockExpectedCallsList.cpp",
+    "file": "../dep/cpputest/src/CppUTestExt/MockExpectedCallsList.cpp",
+    "output": "run_tests@exe/dep_cpputest_src_CppUTestExt_MockExpectedCallsList.cpp.o"
+  },
+  {
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -Irun_tests@exe -I. -I.. -I../tests/modules -I../tests/../src -I../dep/cpputest/include -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'run_tests@exe/dep_cpputest_src_CppUTestExt_MockFailure.cpp.o' -MF 'run_tests@exe/dep_cpputest_src_CppUTestExt_MockFailure.cpp.o.d' -o 'run_tests@exe/dep_cpputest_src_CppUTestExt_MockFailure.cpp.o' -c ../dep/cpputest/src/CppUTestExt/MockFailure.cpp",
+    "file": "../dep/cpputest/src/CppUTestExt/MockFailure.cpp",
+    "output": "run_tests@exe/dep_cpputest_src_CppUTestExt_MockFailure.cpp.o"
+  },
+  {
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -Irun_tests@exe -I. -I.. -I../tests/modules -I../tests/../src -I../dep/cpputest/include -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'run_tests@exe/dep_cpputest_src_CppUTestExt_MockNamedValue.cpp.o' -MF 'run_tests@exe/dep_cpputest_src_CppUTestExt_MockNamedValue.cpp.o.d' -o 'run_tests@exe/dep_cpputest_src_CppUTestExt_MockNamedValue.cpp.o' -c ../dep/cpputest/src/CppUTestExt/MockNamedValue.cpp",
+    "file": "../dep/cpputest/src/CppUTestExt/MockNamedValue.cpp",
+    "output": "run_tests@exe/dep_cpputest_src_CppUTestExt_MockNamedValue.cpp.o"
+  },
+  {
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -Irun_tests@exe -I. -I.. -I../tests/modules -I../tests/../src -I../dep/cpputest/include -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'run_tests@exe/dep_cpputest_src_CppUTestExt_MockSupport.cpp.o' -MF 'run_tests@exe/dep_cpputest_src_CppUTestExt_MockSupport.cpp.o.d' -o 'run_tests@exe/dep_cpputest_src_CppUTestExt_MockSupport.cpp.o' -c ../dep/cpputest/src/CppUTestExt/MockSupport.cpp",
+    "file": "../dep/cpputest/src/CppUTestExt/MockSupport.cpp",
+    "output": "run_tests@exe/dep_cpputest_src_CppUTestExt_MockSupport.cpp.o"
+  },
+  {
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -Irun_tests@exe -I. -I.. -I../tests/modules -I../tests/../src -I../dep/cpputest/include -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'run_tests@exe/dep_cpputest_src_CppUTestExt_MockSupport_c.cpp.o' -MF 'run_tests@exe/dep_cpputest_src_CppUTestExt_MockSupport_c.cpp.o.d' -o 'run_tests@exe/dep_cpputest_src_CppUTestExt_MockSupport_c.cpp.o' -c ../dep/cpputest/src/CppUTestExt/MockSupport_c.cpp",
+    "file": "../dep/cpputest/src/CppUTestExt/MockSupport_c.cpp",
+    "output": "run_tests@exe/dep_cpputest_src_CppUTestExt_MockSupport_c.cpp.o"
+  },
+  {
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -Irun_tests@exe -I. -I.. -I../tests/modules -I../tests/../src -I../dep/cpputest/include -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'run_tests@exe/dep_cpputest_src_CppUTestExt_MockSupportPlugin.cpp.o' -MF 'run_tests@exe/dep_cpputest_src_CppUTestExt_MockSupportPlugin.cpp.o.d' -o 'run_tests@exe/dep_cpputest_src_CppUTestExt_MockSupportPlugin.cpp.o' -c ../dep/cpputest/src/CppUTestExt/MockSupportPlugin.cpp",
+    "file": "../dep/cpputest/src/CppUTestExt/MockSupportPlugin.cpp",
+    "output": "run_tests@exe/dep_cpputest_src_CppUTestExt_MockSupportPlugin.cpp.o"
+  },
+  {
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -Irun_tests@exe -I. -I.. -I../tests/modules -I../tests/../src -I../dep/cpputest/include -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'run_tests@exe/dep_cpputest_src_CppUTestExt_OrderedTest.cpp.o' -MF 'run_tests@exe/dep_cpputest_src_CppUTestExt_OrderedTest.cpp.o.d' -o 'run_tests@exe/dep_cpputest_src_CppUTestExt_OrderedTest.cpp.o' -c ../dep/cpputest/src/CppUTestExt/OrderedTest.cpp",
+    "file": "../dep/cpputest/src/CppUTestExt/OrderedTest.cpp",
+    "output": "run_tests@exe/dep_cpputest_src_CppUTestExt_OrderedTest.cpp.o"
+  },
+  {
+    "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
+    "command": "c++ -Irun_tests@exe -I. -I.. -I../tests/modules -I../tests/../src -I../dep/cpputest/include -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'run_tests@exe/dep_cpputest_src_Platforms_Gcc_UtestPlatform.cpp.o' -MF 'run_tests@exe/dep_cpputest_src_Platforms_Gcc_UtestPlatform.cpp.o.d' -o 'run_tests@exe/dep_cpputest_src_Platforms_Gcc_UtestPlatform.cpp.o' -c ../dep/cpputest/src/Platforms/Gcc/UtestPlatform.cpp",
+    "file": "../dep/cpputest/src/Platforms/Gcc/UtestPlatform.cpp",
+    "output": "run_tests@exe/dep_cpputest_src_Platforms_Gcc_UtestPlatform.cpp.o"
   }
 ]

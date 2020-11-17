@@ -1,5 +1,7 @@
 #pragma once
 
+#include <stdint.h>
+
 /**
  * @brief Calculated battery state of charge (SoC) using a extended kalman filter.
  * Math currently uses floating point arithmetic. Can only record diffreences in soc at a 30 min interval
@@ -65,7 +67,7 @@ class SoCKalman
     uint8_t _n = 3;
     uint8_t _m = 1;
     const uint32_t SOC_SCALED_HUNDRED_PERCENT = 100000;  // 100% charge = 100000
-    const uint32_t SOC_SCALED_MAX = 2 * SOC_SCALED_HUNDRED_PERCENT;   // allow soc to track up higher than 100% to gauge efficiency
+    const uint32_t SOC_SCALED_MAX = 2 * SOC_SCALED_HUNDRED_PERCENT;  // allow soc to track up higher than 100% to gauge efficiency
 
     /**
      * @brief estimate an initial soc based on battery voltage
@@ -108,6 +110,6 @@ class SoCKalman
 
     uint8_t inverse(float* a, float* result);
 
-    uint32_t clamp(uint32_t value, uin32_t min, uint32_t max);
+    uint32_t clamp(uint32_t value, uint32_t min, uint32_t max);
 
 };

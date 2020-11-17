@@ -253,7 +253,7 @@ uint8_t SoCKalman::inverse(float* a, float* result)
     return 0;
 }
 
-uint32_t SoCKalman::clamp(uint32_t value, uin32_t min, uint32_t max)
+uint32_t SoCKalman::clamp(uint32_t value, uint32_t min, uint32_t max)
 {
     if (value > max) {
         return max;

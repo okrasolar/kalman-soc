@@ -1,1 +1,1 @@
-{"version": "undefined", "descriptive_name": "tutorial", "subproject_dir": "subprojects", "subprojects": []}
+{"version": "0.0.1", "descriptive_name": "Kalman SoC", "subproject_dir": "dep", "subprojects": [{"name": "cpputest", "version": "3.8", "descriptive_name": "CppUTest"}]}
