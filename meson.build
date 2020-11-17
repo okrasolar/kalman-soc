@@ -14,8 +14,11 @@ src_files = files([
     'src/SoCKalman.cpp',
 ])
 
-# Include directory when used as a submodule
-kalman_inc = include_directories(['.'])
+# Include kalman directory for main executable
+kalman_inc = include_directories([
+    '.',
+    'src'
+])
 
 # Build the source library
 kalman_lib = static_library(
@@ -25,7 +28,13 @@ kalman_lib = static_library(
 )
 
 # Build the backtesting tool executable
-executable('backtest', 'main.cpp')
+backtest = executable(
+    'backtest',
+    'main.cpp',
+    include_directories: [ kalman_inc ],
+    link_with: [ kalman_lib ],
+    native: true
+)
 
 # Only build examples and tests when not a subproject
 if (meson.is_subproject() != true)

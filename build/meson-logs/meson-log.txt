@@ -1,4 +1,4 @@
-Build started at 2020-11-17T11:24:48.186066
+Build started at 2020-11-17T16:58:29.731325
 Main binary: /usr/local/opt/python@3.8/bin/python3.8
 Build Options: -Dbackend=ninja
 Python system: Darwin
@@ -21,6 +21,7 @@ Target machine cpu family: x86_64
 Target machine cpu: x86_64
 Program python3 found: YES (/Users/matthewjohnston/anaconda3/envs/okra-soc/bin/python3)
 Program clang-format found: YES (/usr/local/bin/clang-format)
+WARNING: Tried to mix libraries for machines MachineChoice.BUILD and MachineChoice.HOST in target 'backtest' This will fail in cross build.
 
 Executing subproject cpputest method meson 
 
@@ -44,20 +45,8 @@ Build commands:
 Build targets in project: 4
 Found ninja-1.10.1 at /usr/local/bin/ninja
 Running compile:
-Working directory:  /Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build/meson-private/tmpatczoj9h
-Command line:  c++ /Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build/meson-private/tmpatczoj9h/testfile.cpp -o /Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build/meson-private/tmpatczoj9h/output.obj -pipe -c -O0 -fpermissive --print-search-dirs 
-
-Code:
- 
-Compiler stdout:
- programs: =/Library/Developer/CommandLineTools/usr/bin
-libraries: =/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3
-
-Compiler stderr:
- 
-Running compile:
-Working directory:  /Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build/meson-private/tmpc944ep8u
-Command line:  c++ /Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build/meson-private/tmpc944ep8u/testfile.cpp -o /Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build/meson-private/tmpc944ep8u/output.obj -pipe -c -O0 -fpermissive --print-search-dirs 
+Working directory:  /Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build/meson-private/tmpib4f_at0
+Command line:  c++ /Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build/meson-private/tmpib4f_at0/testfile.cpp -o /Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build/meson-private/tmpib4f_at0/output.obj -pipe -c -O0 -fpermissive --print-search-dirs 
 
 Code:
  

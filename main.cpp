@@ -6,6 +6,8 @@
 #include <stdexcept> // std::runtime_error
 #include <sstream> // std::stringstream
 
+#include "SoCKalman.h"
+
 
 void write_csv(std::string filename, std::vector<std::pair<std::string, std::vector<int> > > dataset){
     // Make a CSV file with one or more columns of integer values
@@ -40,9 +42,16 @@ void write_csv(std::string filename, std::vector<std::pair<std::string, std::vec
     myFile.close();
 }
 
-std::vector<std::pair<std::string, std::vector<int> > > read_csv(std::string filename){
+std::vector<std::pair<std::string, std::vector<int> > > process_csv(std::string filename){
     // Reads a CSV file into a vector of <string, vector<int>> pairs where
     // each pair represents <column name, column values>
+
+    // Instantiate kalman filter and initial values
+    SoCKalman kalman;
+
+    uint32_t batteryEff = 85000;
+    uint32_t initialSoC = 0xFFFFFFFF;
+    uint32_t batteryCapacity = 1200;
 
     // Create a vector of <string, int vector> pairs to store the result
     std::vector<std::pair<std::string, std::vector<int> > > result;
@@ -68,16 +77,15 @@ std::vector<std::pair<std::string, std::vector<int> > > read_csv(std::string fil
 
         // Extract each column name
         while(std::getline(ss, colname, ',')){
-
-            printf("Column: ");
-            printf("%s\n", colname.c_str());
             
             // Initialize and add <colname, int vector> pairs to result
             std::pair<std::string, std::vector<int> > column;
+            column.first = colname;
             result.push_back(column);
         }
     }
 
+    int lineIdx = 0;
     // Read data, line by line
     while(std::getline(myFile, line))
     {
@@ -85,13 +93,10 @@ std::vector<std::pair<std::string, std::vector<int> > > read_csv(std::string fil
         std::stringstream ss(line);
         
         // Keep track of the current column index
-        // note: skipping first column because it is a datetime currently -- will need to chnage it to be time difference in milliseconds
         int colIdx = 0;
         
         // Extract each integer
         while(ss >> val){
-            printf("Val: ");
-            printf("%d\n", val);
             // Add the current integer to the 'colIdx' column's values vector
             result.at(colIdx).second.push_back(val);
             
@@ -101,6 +106,21 @@ std::vector<std::pair<std::string, std::vector<int> > > read_csv(std::string fil
             // Increment the column index
             colIdx++;
         }
+        // TODO: parse line values and use for kalman sample
+        if (lineIdx == 0) {
+            // use battery voltage to initialize kalman filter
+            uint32_t batteryVoltage = result.at(3).second.back();
+            kalman.init(true, false, batteryEff, batteryVoltage, initialSoC);
+        } else {
+            // use sensor data to do a sample with the kalman filter
+            bool isBatteryInFloat = (result.at(2).second.back() == 3);
+            int32_t batteryMilliAmps = result.at(0).second.back();
+            uint32_t batteryVoltage = result.at(3).second.back();
+            int32_t batteryMilliWatts = result.at(1).second.back();
+            uint32_t samplePeriodMilliSec = result.at(4).second.back();
+            kalman.sample(isBatteryInFloat, batteryMilliAmps, batteryVoltage, batteryMilliWatts, samplePeriodMilliSec, batteryCapacity);
+        }
+        lineIdx++;
     }
 
     // Close file
@@ -110,8 +130,9 @@ std::vector<std::pair<std::string, std::vector<int> > > read_csv(std::string fil
 }
 
 int main() {
-    // Read three_cols.csv and ones.csv
-    std::vector<std::pair<std::string, std::vector<int> > > sensor_data = read_csv("../../data/sensor_data.csv");
+
+    // Read and process sensor data using kalman filter
+    std::vector<std::pair<std::string, std::vector<int> > > sensor_data = process_csv("../../data/sensor_data.csv");
 
     printf("Finished reading.\n");
 
