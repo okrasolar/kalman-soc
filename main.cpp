@@ -83,6 +83,11 @@ std::vector<std::pair<std::string, std::vector<int> > > process_csv(std::string 
             column.first = colname;
             result.push_back(column);
         }
+        // Add new column for Kalman SoC
+        std::pair<std::string, std::vector<int> > column;
+        std::string colname ("kalman_soc");
+        column.first = colname;
+        result.push_back(column);
     }
 
     int lineIdx = 0;
@@ -106,11 +111,12 @@ std::vector<std::pair<std::string, std::vector<int> > > process_csv(std::string 
             // Increment the column index
             colIdx++;
         }
-        // TODO: parse line values and use for kalman sample
         if (lineIdx == 0) {
             // use battery voltage to initialize kalman filter
             uint32_t batteryVoltage = result.at(3).second.back();
             kalman.init(true, false, batteryEff, batteryVoltage, initialSoC);
+            uint32_t soc = kalman.read();
+            result.at(colIdx).second.push_back(soc);
         } else {
             // use sensor data to do a sample with the kalman filter
             bool isBatteryInFloat = (result.at(2).second.back() == 3);
@@ -119,6 +125,9 @@ std::vector<std::pair<std::string, std::vector<int> > > process_csv(std::string 
             int32_t batteryMilliWatts = result.at(1).second.back();
             uint32_t samplePeriodMilliSec = result.at(4).second.back();
             kalman.sample(isBatteryInFloat, batteryMilliAmps, batteryVoltage, batteryMilliWatts, samplePeriodMilliSec, batteryCapacity);
+            uint32_t soc = kalman.read();
+            result.at(colIdx).second.push_back(soc);
+
         }
         lineIdx++;
     }
