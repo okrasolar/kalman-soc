@@ -9,6 +9,10 @@
 #include "SoCKalman.h"
 
 
+std::string INPUT_FILEPATH = "../data/raw_sensor_data.csv";
+std::string OUTPUT_FILEPATH = "../data/processed_sensor_data.csv";
+
+
 void write_csv(std::string filename, std::vector<std::pair<std::string, std::vector<int> > > dataset){
     // Make a CSV file with one or more columns of integer values
     // Each column of data is represented by the pair <column name, column data>
@@ -50,7 +54,8 @@ std::vector<std::pair<std::string, std::vector<int> > > process_csv(std::string 
     SoCKalman kalman;
 
     uint32_t batteryEff = 85000;
-    uint32_t initialSoC = 0xFFFFFFFF;
+    // uint32_t initialSoC = 0xFFFFFFFF;
+    uint32_t initialSoC = 60000;
     uint32_t batteryCapacity = 1200;
 
     // Create a vector of <string, int vector> pairs to store the result
@@ -77,7 +82,12 @@ std::vector<std::pair<std::string, std::vector<int> > > process_csv(std::string 
 
         // Extract each column name
         while(std::getline(ss, colname, ',')){
-            
+
+            if (colname == std::string("timestamp")) {
+                break;
+            }
+            printf("%s\n", colname.c_str());
+
             // Initialize and add <colname, int vector> pairs to result
             std::pair<std::string, std::vector<int> > column;
             column.first = colname;
@@ -102,6 +112,9 @@ std::vector<std::pair<std::string, std::vector<int> > > process_csv(std::string 
         
         // Extract each integer
         while(ss >> val){
+            if (colIdx == 5) {
+                break;
+            }
             // Add the current integer to the 'colIdx' column's values vector
             result.at(colIdx).second.push_back(val);
             
@@ -141,12 +154,12 @@ std::vector<std::pair<std::string, std::vector<int> > > process_csv(std::string 
 int main() {
 
     // Read and process sensor data using kalman filter
-    std::vector<std::pair<std::string, std::vector<int> > > sensor_data = process_csv("../../data/sensor_data.csv");
+    std::vector<std::pair<std::string, std::vector<int> > > result = process_csv(INPUT_FILEPATH);
 
     printf("Finished reading.\n");
 
     // Write to another file to check that this was successful
-    write_csv("../../data/raw_sensor_data.csv", sensor_data);
+    write_csv(OUTPUT_FILEPATH, result);
 
     printf("Finished writing.\n");
     
