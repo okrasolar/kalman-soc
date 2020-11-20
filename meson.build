@@ -30,7 +30,7 @@ kalman_lib = static_library(
 # Build the backtesting tool executable
 backtest = executable(
     'backtest',
-    'main.cpp',
+    'backtest/main.cpp',
     include_directories: [ kalman_inc ],
     link_with: [ kalman_lib ],
     native: true

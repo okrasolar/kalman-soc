@@ -1,4 +1,4 @@
-Build started at 2020-11-17T16:58:29.731325
+Build started at 2020-11-20T16:49:21.608885
 Main binary: /usr/local/opt/python@3.8/bin/python3.8
 Build Options: -Dbackend=ninja
 Python system: Darwin
@@ -45,8 +45,8 @@ Build commands:
 Build targets in project: 4
 Found ninja-1.10.1 at /usr/local/bin/ninja
 Running compile:
-Working directory:  /Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build/meson-private/tmpib4f_at0
-Command line:  c++ /Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build/meson-private/tmpib4f_at0/testfile.cpp -o /Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build/meson-private/tmpib4f_at0/output.obj -pipe -c -O0 -fpermissive --print-search-dirs 
+Working directory:  /Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build/meson-private/tmps18agmcq
+Command line:  c++ /Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build/meson-private/tmps18agmcq/testfile.cpp -o /Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build/meson-private/tmps18agmcq/output.obj -pipe -c -O0 -fpermissive --print-search-dirs 
 
 Code:
  

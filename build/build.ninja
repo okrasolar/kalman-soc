@@ -53,11 +53,11 @@ build Kalman@sta/src_SoCKalman.cpp.o: cpp_COMPILER ../src/SoCKalman.cpp
 build libKalman.a: STATIC_LINKER Kalman@sta/src_SoCKalman.cpp.o
  LINK_ARGS = csr
 
-build backtest@exe/main.cpp.o: cpp_COMPILER ../main.cpp
- DEPFILE = backtest@exe/main.cpp.o.d
+build backtest@exe/backtest_main.cpp.o: cpp_COMPILER ../backtest/main.cpp
+ DEPFILE = backtest@exe/backtest_main.cpp.o.d
  ARGS = -Ibacktest@exe -I. -I.. -I../ -I../src -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g
 
-build backtest: cpp_LINKER_FOR_BUILD backtest@exe/main.cpp.o | libKalman.a
+build backtest: cpp_LINKER_FOR_BUILD backtest@exe/backtest_main.cpp.o | libKalman.a
  LINK_ARGS = -Wl,-dead_strip_dylibs -Wl,-undefined,error -Wl,-headerpad_max_install_names libKalman.a -Wl,-headerpad_max_install_names -Wl,-rpath,@loader_path/
 
 build run_tests@exe/tests_modules_SoCKalmanTest.cpp.o: cpp_COMPILER_FOR_BUILD ../tests/modules/SoCKalmanTest.cpp
@@ -268,13 +268,13 @@ build meson-clean: CUSTOM_COMMAND PHONY
  COMMAND = /usr/local/bin/ninja -t clean
  description = Cleaning.
 
-build build.ninja: REGENERATE_BUILD ../tests/meson.build ../meson.build ../dep/cpputest/meson.build meson-private/coredata.dat
+build build.ninja: REGENERATE_BUILD ../tests/meson.build ../dep/cpputest/meson.build ../meson.build meson-private/coredata.dat
  pool = console
 
 build reconfigure: REGENERATE_BUILD PHONY
  pool = console
 
-build ../tests/meson.build ../meson.build ../dep/cpputest/meson.build meson-private/coredata.dat: phony 
+build ../tests/meson.build ../dep/cpputest/meson.build ../meson.build meson-private/coredata.dat: phony 
 
 default all
 

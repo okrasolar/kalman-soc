@@ -7,9 +7,9 @@
   },
   {
     "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
-    "command": "c++ -Ibacktest@exe -I. -I.. -I../ -I../src -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'backtest@exe/main.cpp.o' -MF 'backtest@exe/main.cpp.o.d' -o 'backtest@exe/main.cpp.o' -c ../main.cpp",
-    "file": "../main.cpp",
-    "output": "backtest@exe/main.cpp.o"
+    "command": "c++ -Ibacktest@exe -I. -I.. -I../ -I../src -Xclang -fcolor-diagnostics -pipe -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'backtest@exe/backtest_main.cpp.o' -MF 'backtest@exe/backtest_main.cpp.o.d' -o 'backtest@exe/backtest_main.cpp.o' -c ../backtest/main.cpp",
+    "file": "../backtest/main.cpp",
+    "output": "backtest@exe/backtest_main.cpp.o"
   },
   {
     "directory": "/Users/matthewjohnston/okra/etl/state_of_charge/kalman-soc/build",
