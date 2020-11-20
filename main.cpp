@@ -9,6 +9,7 @@
 #include "SoCKalman.h"
 
 
+std::string NODE_FILEPATH = "../data/node_data.csv";
 std::string INPUT_FILEPATH = "../data/raw_sensor_data.csv";
 std::string OUTPUT_FILEPATH = "../data/processed_sensor_data.csv";
 
@@ -46,16 +47,72 @@ void write_csv(std::string filename, std::vector<std::pair<std::string, std::vec
     myFile.close();
 }
 
+std::pair<int, int> read_node_data(std::string filename){
+
+    // Create pair to store the result
+    std::pair<int, int> result;
+
+    // Create an input filestream
+    std::ifstream myFile(filename);
+
+    // Make sure the file is open
+    if(!myFile.is_open()) throw std::runtime_error("Could not open file");
+
+    // Declare helper vars
+    std::string line, colname;
+    int val;
+
+    if(myFile.good())
+    {
+        // Extract the first line in the file
+        std::getline(myFile, line);
+
+        // Skip and extract the second line in the file to get the values
+        std::getline(myFile, line);
+
+        // Create a stringstream from the line
+        std::stringstream ss(line);
+        
+        // Keep track of colIdx
+        int colIdx = 0;
+
+        // Extract each integer
+        while(ss >> val){
+            // Add the current integer to the result pair
+
+            
+            if (colIdx == 0) {
+                result.first = val;
+            } else {
+                result.second = val;
+            }
+
+            // If the next token is a comma, ignore it and move on
+            if(ss.peek() == ',') ss.ignore();
+
+            colIdx ++;
+        }
+        
+        return result;
+    }
+
+}
+
 std::vector<std::pair<std::string, std::vector<int> > > process_csv(std::string filename){
     // Reads a CSV file into a vector of <string, vector<int>> pairs where
     // each pair represents <column name, column values>
 
-    // Instantiate kalman filter and initial values
+    // Instantiate kalman filter and initialize values
     SoCKalman kalman;
 
+    // Get node battery type and voltage
+    std::pair<int, int> batteryInfo = read_node_data(NODE_FILEPATH);
+
+    bool isBatteryLithium = (bool)batteryInfo.first;
+    bool isBattery12V = (batteryInfo.second == 12) ? true : false;
+
     uint32_t batteryEff = 85000;
-    // uint32_t initialSoC = 0xFFFFFFFF;
-    uint32_t initialSoC = 60000;
+    uint32_t initialSoC = 0xFFFFFFFF;
     uint32_t batteryCapacity = 1200;
 
     // Create a vector of <string, int vector> pairs to store the result
@@ -86,7 +143,6 @@ std::vector<std::pair<std::string, std::vector<int> > > process_csv(std::string 
             if (colname == std::string("timestamp")) {
                 break;
             }
-            printf("%s\n", colname.c_str());
 
             // Initialize and add <colname, int vector> pairs to result
             std::pair<std::string, std::vector<int> > column;
@@ -95,7 +151,7 @@ std::vector<std::pair<std::string, std::vector<int> > > process_csv(std::string 
         }
         // Add new column for Kalman SoC
         std::pair<std::string, std::vector<int> > column;
-        std::string colname ("kalman_soc");
+        std::string colname("kalman_soc");
         column.first = colname;
         result.push_back(column);
     }
@@ -127,7 +183,7 @@ std::vector<std::pair<std::string, std::vector<int> > > process_csv(std::string 
         if (lineIdx == 0) {
             // use battery voltage to initialize kalman filter
             uint32_t batteryVoltage = result.at(3).second.back();
-            kalman.init(true, false, batteryEff, batteryVoltage, initialSoC);
+            kalman.init(isBattery12V, isBatteryLithium, batteryEff, batteryVoltage, initialSoC);
             uint32_t soc = kalman.read();
             result.at(colIdx).second.push_back(soc);
         } else {
